@@ -11,6 +11,12 @@ const templates = [
   { slug: "salon",      label: "Hair Salon & Barbershop", desc: "Premium hair, styling & grooming services.",                       color: "from-[#1c1c1e] to-[#3a3a3c]", tag: "Beauty & Lifestyle" },
   { slug: "dental",     label: "Dental Clinic",           desc: "Family & cosmetic dental care, check-ups, braces & more.",         color: "from-[#0284c7] to-[#0369a1]", tag: "Healthcare" },
   { slug: "renovation", label: "Renovation & Contractor", desc: "Home renovation, interior design & construction services.",        color: "from-[#1e293b] to-[#334155]", tag: "Home Services" },
+  { slug: "restaurant", label: "Café & Restaurant",        desc: "Menus, reservations & catering for F&B businesses.",             color: "from-[#b91c1c] to-[#f59e0b]", tag: "Food & Beverage" },
+  { slug: "gym",        label: "Gym & Fitness",            desc: "Classes, memberships & trainer profiles for studios.",            color: "from-[#0f766e] to-[#84cc16]", tag: "Health & Fitness" },
+  { slug: "lawfirm",    label: "Law Firm",                 desc: "Practice areas, credibility & consultations.",                    color: "from-[#1e3a5f] to-[#c8a04e]", tag: "Professional Services" },
+  { slug: "property",   label: "Property Agent",           desc: "Listings, buy / sell / rent & enquiries.",                        color: "from-[#0369a1] to-[#f97316]", tag: "Real Estate" },
+  { slug: "clinic",     label: "Medical Clinic",           desc: "Services, appointments & health screening.",                      color: "from-[#0d9488] to-[#38bdf8]", tag: "Healthcare" },
+  { slug: "portfolio",  label: "Personal Portfolio",       desc: "For individuals — showcase your work, story & services.",         color: "from-[#6d28d9] to-[#ec4899]", tag: "For Individuals" },
 ];
 
 const packages = [
