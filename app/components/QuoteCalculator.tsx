@@ -42,8 +42,8 @@ const PRICING = {
   care: {
     none:     { label: "None", price: 0, note: "Self-managed" },
     lite:     { label: "Lite", price: 80, note: "Hosting, SSL, backups, uptime" },
-    standard: { label: "Standard", price: 180, note: "+ content updates, plugin updates" },
-    pro:      { label: "Pro", price: 350, note: "+ priority support, SEO upkeep, reports" },
+    standard: { label: "Standard", price: 180, note: "+ content & plugin updates" },
+    pro:      { label: "Pro", price: 350, note: "+ priority support, SEO, reports" },
   },
 };
 
@@ -60,24 +60,24 @@ function Stepper({
   label: string; hint: string; value: number; setValue: (n: number) => void; min?: number; max?: number;
 }) {
   return (
-    <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+    <div className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3">
       <div className="min-w-0">
-        <p className="text-sm font-semibold text-white leading-tight">{label}</p>
-        <p className="text-xs text-slate-400">{hint}</p>
+        <p className="text-[13.5px] font-semibold leading-tight text-neutral-800">{label}</p>
+        <p className="text-[11.5px] text-neutral-400">{hint}</p>
       </div>
       <div className="flex items-center gap-2 shrink-0">
         <button
           type="button" aria-label={`Decrease ${label}`}
           onClick={() => setValue(Math.max(min, value - 1))}
           disabled={value <= min}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/20 text-white transition hover:border-amber-400 hover:text-amber-400 disabled:opacity-30"
+          className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition hover:border-[#ED1C24] hover:text-[#ED1C24] disabled:opacity-30"
         >–</button>
-        <span className="w-8 text-center text-base font-bold tabular-nums text-white">{value}</span>
+        <span className="w-8 text-center text-base font-bold tabular-nums text-neutral-900">{value}</span>
         <button
           type="button" aria-label={`Increase ${label}`}
           onClick={() => setValue(Math.min(max, value + 1))}
           disabled={value >= max}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/20 text-white transition hover:border-amber-400 hover:text-amber-400 disabled:opacity-30"
+          className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition hover:border-[#ED1C24] hover:text-[#ED1C24] disabled:opacity-30"
         >+</button>
       </div>
     </div>
@@ -89,16 +89,16 @@ function Toggle({ label, price, on, onClick }: { label: string; price: number; o
     <button
       type="button" onClick={onClick}
       className={`flex w-full items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition ${
-        on ? "border-amber-400 bg-amber-400/10" : "border-white/10 bg-white/5 hover:border-white/25"
+        on ? "border-[#ED1C24] bg-[#FFF3F4]" : "border-neutral-200 bg-white hover:border-neutral-300"
       }`}
     >
       <span className="flex items-center gap-3">
         <span className={`flex h-5 w-5 items-center justify-center rounded-md border text-xs font-bold ${
-          on ? "border-amber-400 bg-amber-400 text-slate-900" : "border-white/30 text-transparent"
+          on ? "border-[#ED1C24] bg-[#ED1C24] text-white" : "border-neutral-300 text-transparent"
         }`}>✓</span>
-        <span className={`text-sm font-medium ${on ? "text-white" : "text-slate-300"}`}>{label}</span>
+        <span className={`text-[13.5px] font-medium ${on ? "text-neutral-900" : "text-neutral-700"}`}>{label}</span>
       </span>
-      <span className="shrink-0 text-xs font-semibold text-slate-400">+{rm(price)}</span>
+      <span className="shrink-0 text-[12.5px] font-semibold text-neutral-500">+{rm(price)}</span>
     </button>
   );
 }
@@ -117,12 +117,12 @@ function OptionRow<T extends string>({
           <button
             key={o.key} type="button" onClick={() => setValue(o.key)}
             className={`rounded-xl border px-3.5 py-3 text-left transition ${
-              active ? "border-amber-400 bg-amber-400/10 ring-1 ring-amber-400" : "border-white/10 bg-white/5 hover:border-white/25"
+              active ? "border-[#ED1C24] bg-[#FFF3F4] ring-1 ring-[#ED1C24]" : "border-neutral-200 bg-white hover:border-neutral-300"
             }`}
           >
-            <p className={`text-sm font-bold leading-tight ${active ? "text-amber-400" : "text-white"}`}>{o.label}</p>
-            <p className="mt-0.5 text-xs text-slate-400">{o.note}</p>
-            <p className="mt-1 text-xs font-semibold text-slate-300">
+            <p className={`text-[13.5px] font-bold leading-tight ${active ? "text-[#ED1C24]" : "text-neutral-800"}`}>{o.label}</p>
+            <p className="mt-0.5 text-[11.5px] text-neutral-400">{o.note}</p>
+            <p className="mt-1 text-[12px] font-semibold text-neutral-500">
               {o.price === 0 ? "Included" : `${rm(o.price)}${suffix || ""}`}
             </p>
           </button>
@@ -184,22 +184,22 @@ export default function QuoteCalculator() {
   }, [pages, features, content, domain, care, oneTime, monthly]);
 
   return (
-    <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 bg-white/[0.03]">
-      <div className="border-b border-white/10 px-6 py-5">
-        <p className="text-xs font-bold uppercase tracking-widest text-amber-400">Instant Estimate</p>
-        <h3 className="mt-1 text-2xl font-bold text-white">Build your website quote</h3>
-        <p className="mt-1 max-w-xl text-sm text-slate-400">Pick what you need — your price updates live. No sign-up, no waiting.</p>
+    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-soft">
+      <div className="bg-[#060606] px-6 py-5">
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#ED1C24]">Instant Estimate</p>
+        <h3 className="mt-0.5 text-[22px] font-bold leading-tight text-white">Build your website quote</h3>
+        <p className="mt-1 max-w-xl text-[13.5px] text-white/55">Pick what you need — your price updates live. No sign-up, no waiting.</p>
       </div>
 
       <div className="grid lg:grid-cols-[1fr_320px]">
         <div className="space-y-7 p-6">
           <section>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Size</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Size</p>
             <Stepper label="Number of pages" hint="Home, About, Services, Contact…" value={pages} setValue={setPages} min={1} max={30} />
           </section>
 
           <section>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Features</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Features</p>
             <div className="grid gap-2 sm:grid-cols-2">
               {(Object.keys(PRICING.features) as FeatureKey[]).map((k) => (
                 <Toggle key={k} label={PRICING.features[k].label} price={PRICING.features[k].price}
@@ -209,7 +209,7 @@ export default function QuoteCalculator() {
           </section>
 
           <section>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Content & growth</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Content &amp; growth</p>
             <div className="grid gap-2 sm:grid-cols-2">
               {(Object.keys(PRICING.content) as ContentKey[]).map((k) => (
                 <Toggle key={k} label={PRICING.content[k].label} price={PRICING.content[k].price}
@@ -219,40 +219,40 @@ export default function QuoteCalculator() {
           </section>
 
           <section>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Domain</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Domain</p>
             <OptionRow value={domain} setValue={setDomain}
               options={(Object.keys(PRICING.domain) as DomainKey[]).map((k) => ({ key: k, ...PRICING.domain[k] }))} />
           </section>
 
           <section>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Care plan (optional, monthly)</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Care plan (optional, monthly)</p>
             <OptionRow value={care} setValue={setCare} suffix="/mo"
               options={(Object.keys(PRICING.care) as CareKey[]).map((k) => ({ key: k, ...PRICING.care[k] }))} />
           </section>
         </div>
 
         {/* Summary */}
-        <div className="border-t border-white/10 bg-white/[0.02] p-6 lg:border-l lg:border-t-0">
+        <div className="border-t border-neutral-200 bg-neutral-50/60 p-6 lg:border-l lg:border-t-0">
           <div className="lg:sticky lg:top-6">
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Your estimate</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-wider text-neutral-400">Your estimate</p>
             <div className="mb-4 max-h-[230px] space-y-1.5 overflow-y-auto pr-1">
               {lines.map((l, i) => (
-                <div key={i} className="flex items-start justify-between gap-2 text-xs">
-                  <span className="leading-snug text-slate-400">{l.label}</span>
-                  <span className="shrink-0 font-medium tabular-nums text-slate-200">{rm(l.amount)}</span>
+                <div key={i} className="flex items-start justify-between gap-2 text-[12.5px]">
+                  <span className="leading-snug text-neutral-500">{l.label}</span>
+                  <span className="shrink-0 font-medium tabular-nums text-neutral-700">{rm(l.amount)}</span>
                 </div>
               ))}
             </div>
 
-            <div className="border-t border-white/10 pt-4">
+            <div className="border-t border-neutral-200 pt-4">
               <div className="flex items-baseline gap-1.5">
-                <span className="text-3xl font-extrabold tabular-nums text-white leading-none">{rm(oneTime)}</span>
-                <span className="text-sm font-semibold text-slate-400">one-time</span>
+                <span className="text-[32px] font-extrabold leading-none tabular-nums text-neutral-900">{rm(oneTime)}</span>
+                <span className="text-[14px] font-semibold text-neutral-500">one-time</span>
               </div>
               {monthly > 0 && (
-                <p className="mt-1 text-sm font-semibold text-amber-400">+ {rm(monthly)}/mo care</p>
+                <p className="mt-1 text-[14px] font-semibold text-[#ED1C24]">+ {rm(monthly)}/mo care</p>
               )}
-              <p className="mt-1.5 text-xs leading-snug text-slate-500">
+              <p className="mt-1.5 text-[12px] leading-snug text-neutral-400">
                 Estimate only — final quote confirmed on WhatsApp. Domain billed yearly.
               </p>
             </div>
@@ -261,7 +261,7 @@ export default function QuoteCalculator() {
               href={`https://wa.me/${PHONE}`}
               onClick={(e) => { e.preventDefault(); window.open(`https://wa.me/${PHONE}?text=${waMessage}`, "_blank", "noopener,noreferrer"); }}
               target="_blank" rel="noopener noreferrer"
-              className="mt-4 block rounded-full bg-green-500 py-3 text-center text-sm font-bold text-white transition hover:bg-green-400"
+              className="mt-4 block rounded-full bg-[#25D366] py-3 text-center text-sm font-bold text-white transition hover:bg-[#1db954]"
             >
               Get this quote on WhatsApp
             </a>
