@@ -73,14 +73,6 @@ export default function Showcase() {
       {/* Hero — dark band with red orb + grid */}
       <section className="relative overflow-hidden bg-[#060606] px-5 py-24 text-center sm:py-28">
         <div className="pointer-events-none absolute -top-48 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#ED1C24]/[0.12] blur-[120px]" />
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
         <div className="relative z-10 mx-auto max-w-3xl">
           <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ED1C24]">
             Web Design · Klang Valley
