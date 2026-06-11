@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export type SiteConfig = {
   brand: string;
@@ -6,6 +7,7 @@ export type SiteConfig = {
   tagline: string;
   primary: string;   // main brand colour (hex)
   accent: string;    // accent colour (hex)
+  heroImg: string;   // hero background photo (/templates/<slug>.jpg)
   heroEmoji: string;
   hero: { badge: string; title: string; sub: string; cta: string };
   about: { title: string; body: string };
@@ -40,8 +42,10 @@ export default function BusinessSite({ c }: { c: SiteConfig }) {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-5 py-24 text-center sm:py-28" style={{ background: `linear-gradient(160deg, ${c.primary}, ${c.accent})` }}>
-        <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/10 blur-[100px]" />
+      <section className="relative overflow-hidden px-5 py-28 text-center sm:py-36">
+        <Image src={c.heroImg} alt={c.brand} fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0" style={{ background: `linear-gradient(150deg, ${c.primary}e6, ${c.accent}b3)` }} />
+        <div className="absolute inset-0 bg-black/25" />
         <div className="relative z-10 mx-auto max-w-3xl">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/90">
             {c.hero.badge}
