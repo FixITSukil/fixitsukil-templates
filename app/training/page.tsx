@@ -14,7 +14,7 @@ export default function TrainingHome() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#14304d] py-24 sm:py-36">
         <Image src="/templates/training-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#14304d] via-[#14304d]/85 to-[#14304d]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#14304d]/90 via-[#14304d]/60 to-[#14304d]/15" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#d8b864]">

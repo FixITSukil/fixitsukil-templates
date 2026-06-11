@@ -23,7 +23,7 @@ export default function DentalHome() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0c4a6e] py-24 sm:py-36">
         <Image src="/templates/dental-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c4a6e] via-[#075985]/85 to-[#0284c7]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c4a6e]/90 via-[#075985]/60 to-[#0284c7]/15" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             <div className="animate-fade-up">

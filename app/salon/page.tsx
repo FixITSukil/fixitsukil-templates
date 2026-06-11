@@ -24,7 +24,7 @@ export default function SalonHome() {
       <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-[#0a0a0a]">
         <div className="absolute inset-0">
           <Image src="/templates/salon-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10" />
           <div className="absolute right-0 top-0 h-full w-3/5 bg-gradient-to-bl from-[#2a2000]/60 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">

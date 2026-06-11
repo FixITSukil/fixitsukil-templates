@@ -25,7 +25,7 @@ export default function RenovationHome() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0f172a] py-24 sm:py-36">
         <Image src="/templates/renovation-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/85 to-[#0f172a]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/90 via-[#0f172a]/60 to-[#0f172a]/10" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl animate-fade-up">
             <span className="inline-flex items-center rounded-sm border border-[#f59e0b]/40 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.25em] text-[#f59e0b]">

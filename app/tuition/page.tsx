@@ -22,7 +22,7 @@ export default function TuitionHome() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#1e3a8a] py-24 sm:py-36">
         <Image src="/templates/tuition-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] via-[#1e40af]/85 to-[#1a56db]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a]/90 via-[#1e40af]/60 to-[#1a56db]/15" />
         <div className="absolute -right-16 top-12 h-72 w-72 rounded-full bg-[#f97316]/20 blur-3xl" />
         <div className="absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

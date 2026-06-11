@@ -46,7 +46,7 @@ export default function BusinessSite({ c }: { c: SiteConfig }) {
         <Image src={c.heroImg} alt={c.brand} fill priority sizes="100vw" className="object-cover" />
         {/* light brand tint + bottom scrim — photo stays clearly visible */}
         <div className="absolute inset-0" style={{ background: `linear-gradient(150deg, ${c.primary}59, ${c.accent}33)` }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-black/10" />
         <div className="relative z-10 mx-auto max-w-3xl [text-shadow:0_2px_14px_rgba(0,0,0,0.55)]">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/90">
             {c.hero.badge}
