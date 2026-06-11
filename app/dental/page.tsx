@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   { t: "General Dentistry", d: "Routine check-ups, fillings, extractions, and preventive care." },
@@ -20,9 +21,9 @@ export default function DentalHome() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0c4a6e] via-[#075985] to-[#0284c7] py-24 sm:py-36">
-        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px,#fff 1px,transparent 0)", backgroundSize: "30px 30px" }} />
-        <div className="absolute -right-10 top-0 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
+      <section className="relative overflow-hidden bg-[#0c4a6e] py-24 sm:py-36">
+        <Image src="/templates/dental-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c4a6e] via-[#075985]/85 to-[#0284c7]/35" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             <div className="animate-fade-up">

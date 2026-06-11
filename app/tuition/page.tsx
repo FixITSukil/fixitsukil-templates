@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const subjects = [
   { n: "01", t: "Mathematics", d: "From basic arithmetic to Additional Maths — we break it down so it clicks." },
@@ -19,8 +20,9 @@ export default function TuitionHome() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a56db] via-[#1e40af] to-[#1e3a8a] py-24 sm:py-36">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px,#fff 1px,transparent 0)", backgroundSize: "28px 28px" }} />
+      <section className="relative overflow-hidden bg-[#1e3a8a] py-24 sm:py-36">
+        <Image src="/templates/tuition-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] via-[#1e40af]/85 to-[#1a56db]/35" />
         <div className="absolute -right-16 top-12 h-72 w-72 rounded-full bg-[#f97316]/20 blur-3xl" />
         <div className="absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
