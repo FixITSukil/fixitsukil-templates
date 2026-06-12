@@ -9,12 +9,12 @@ const services = [
 ];
 
 const gallery = [
-  { label: "Balayage Colour", sub: "Natural, sun-kissed tones" },
-  { label: "Classic Cut", sub: "Timeless precision cut" },
-  { label: "Colour Melt", sub: "Seamless colour transition" },
-  { label: "Textured Fade", sub: "Modern barbering" },
-  { label: "Keratin Blow-out", sub: "Smooth &amp; frizz-free" },
-  { label: "Bridal Style", sub: "For your special day" },
+  { label: "Balayage Colour", sub: "Natural, sun-kissed tones", img: "/templates/salon-g1.jpg" },
+  { label: "Classic Cut", sub: "Timeless precision cut", img: "/templates/salon-g2.jpg" },
+  { label: "Colour Melt", sub: "Seamless colour transition", img: "/templates/salon-g3.jpg" },
+  { label: "Textured Fade", sub: "Modern barbering", img: "/templates/salon-g4.jpg" },
+  { label: "Keratin Blow-out", sub: "Smooth &amp; frizz-free", img: "/templates/salon-g5.jpg" },
+  { label: "Bridal Style", sub: "For your special day", img: "/templates/salon-g6.jpg" },
 ];
 
 export default function SalonHome() {
@@ -77,12 +77,10 @@ export default function SalonHome() {
           <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-3">
             {gallery.map((g) => (
               <div key={g.label} className="group relative aspect-square overflow-hidden rounded-lg bg-[#1e1e1e]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 text-center">
-                  <span className="text-sm font-semibold text-white/40">{g.label}</span>
-                  <span className="text-xs text-white/25" dangerouslySetInnerHTML={{ __html: g.sub }} />
-                </div>
-                <div className="absolute inset-0 flex flex-col items-end justify-end bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                  <span className="text-xs font-semibold text-white">{g.label}</span>
+                <Image src={g.img} alt={g.label} fill sizes="(max-width: 640px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-black/75 via-black/20 to-transparent p-4">
+                  <span className="text-sm font-semibold text-white">{g.label}</span>
+                  <span className="text-xs text-white/60" dangerouslySetInnerHTML={{ __html: g.sub }} />
                 </div>
               </div>
             ))}

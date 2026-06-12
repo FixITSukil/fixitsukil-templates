@@ -1,38 +1,39 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
     cat: "Full Renovation",
     badge: "bg-[#1e293b] text-white",
     items: [
-      { t: "Damansara Heights — 3-Bed Condo", loc: "Damansara Heights, KL", scope: "Full gut reno: layout, flooring, kitchen, bathrooms, electrical, painting.", dur: "8 weeks", budget: "RM120,000" },
-      { t: "Mont Kiara — Luxury Penthouse", loc: "Mont Kiara, KL", scope: "Premium finishes, feature walls, designer kitchen, smart home integration.", dur: "12 weeks", budget: "RM280,000" },
-      { t: "Subang Jaya — Terrace House", loc: "Subang Jaya, Selangor", scope: "Extension, new master bedroom, full repaint, landscaping.", dur: "10 weeks", budget: "RM95,000" },
+      { t: "Damansara Heights — 3-Bed Condo", loc: "Damansara Heights, KL", scope: "Full gut reno: layout, flooring, kitchen, bathrooms, electrical, painting.", dur: "8 weeks", budget: "RM120,000" , img: "/templates/reno-p1.jpg" },
+      { t: "Mont Kiara — Luxury Penthouse", loc: "Mont Kiara, KL", scope: "Premium finishes, feature walls, designer kitchen, smart home integration.", dur: "12 weeks", budget: "RM280,000" , img: "/templates/reno-p2.jpg" },
+      { t: "Subang Jaya — Terrace House", loc: "Subang Jaya, Selangor", scope: "Extension, new master bedroom, full repaint, landscaping.", dur: "10 weeks", budget: "RM95,000" , img: "/templates/reno-p3.jpg" },
     ],
   },
   {
     cat: "Kitchen & Bathroom",
     badge: "bg-amber-500 text-white",
     items: [
-      { t: "Bangsar — Kitchen Overhaul", loc: "Bangsar, KL", scope: "Custom island cabinet, quartz countertop, new appliances, retiling.", dur: "3 weeks", budget: "RM42,000" },
-      { t: "Petaling Jaya — Master Bathroom", loc: "PJ, Selangor", scope: "Walk-in shower, rain head fitting, vanity, mosaic feature tile.", dur: "2 weeks", budget: "RM28,000" },
-      { t: "Ara Damansara — Twin Bathrooms", loc: "Ara Damansara, Selangor", scope: "Two bathrooms renovated simultaneously — full retile, fittings, vanity.", dur: "3 weeks", budget: "RM36,000" },
+      { t: "Bangsar — Kitchen Overhaul", loc: "Bangsar, KL", scope: "Custom island cabinet, quartz countertop, new appliances, retiling.", dur: "3 weeks", budget: "RM42,000" , img: "/templates/reno-p4.jpg" },
+      { t: "Petaling Jaya — Master Bathroom", loc: "PJ, Selangor", scope: "Walk-in shower, rain head fitting, vanity, mosaic feature tile.", dur: "2 weeks", budget: "RM28,000" , img: "/templates/reno-p5.jpg" },
+      { t: "Ara Damansara — Twin Bathrooms", loc: "Ara Damansara, Selangor", scope: "Two bathrooms renovated simultaneously — full retile, fittings, vanity.", dur: "3 weeks", budget: "RM36,000" , img: "/templates/reno-p6.jpg" },
     ],
   },
   {
     cat: "Commercial & Office",
     badge: "bg-slate-600 text-white",
     items: [
-      { t: "Menara X — Office Fit-Out", loc: "KLCC, KL", scope: "Open-plan workstations, meeting rooms, pantry, feature reception.", dur: "5 weeks", budget: "RM180,000" },
-      { t: "SS2 — Retail Shopfront", loc: "SS2, PJ", scope: "Full shopfront redesign, new flooring, lighting, display fitting.", dur: "2 weeks", budget: "RM35,000" },
+      { t: "Menara X — Office Fit-Out", loc: "KLCC, KL", scope: "Open-plan workstations, meeting rooms, pantry, feature reception.", dur: "5 weeks", budget: "RM180,000" , img: "/templates/reno-p7.jpg" },
+      { t: "SS2 — Retail Shopfront", loc: "SS2, PJ", scope: "Full shopfront redesign, new flooring, lighting, display fitting.", dur: "2 weeks", budget: "RM35,000" , img: "/templates/reno-p8.jpg" },
     ],
   },
   {
     cat: "Carpentry & Custom Work",
     badge: "bg-orange-600 text-white",
     items: [
-      { t: "TTDI — Full Wardrobe Build", loc: "TTDI, KL", scope: "Floor-to-ceiling built-in wardrobe with internal organisers, mirror doors.", dur: "1 week", budget: "RM18,000" },
-      { t: "Kota Damansara — Feature Wall", loc: "Kota Damansara, Selangor", scope: "Fluted panel feature wall with concealed lighting behind TV console.", dur: "3 days", budget: "RM6,500" },
+      { t: "TTDI — Full Wardrobe Build", loc: "TTDI, KL", scope: "Floor-to-ceiling built-in wardrobe with internal organisers, mirror doors.", dur: "1 week", budget: "RM18,000" , img: "/templates/reno-p9.jpg" },
+      { t: "Kota Damansara — Feature Wall", loc: "Kota Damansara, Selangor", scope: "Fluted panel feature wall with concealed lighting behind TV console.", dur: "3 days", budget: "RM6,500" , img: "/templates/reno-p10.jpg" },
     ],
   },
 ];
@@ -62,8 +63,8 @@ export default function RenovationPortfolio() {
               <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {group.items.map((item) => (
                   <div key={item.t} className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                    <div className="aspect-video bg-slate-100 flex items-center justify-center text-slate-300">
-                      <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <div className="relative aspect-video overflow-hidden bg-slate-100">
+                      <Image src={item.img} alt={item.t} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
                     </div>
                     <div className="p-6">
                       <h3 className="font-bold text-slate-900">{item.t}</h3>
